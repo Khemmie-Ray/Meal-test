@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #0C090A;
+  --yellow: #EDC71B;
+  --white: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* ======================
+      Typography
+====================== */
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.content p {
+  width: 20%;
+}
+
+/* ======================
+      Layout
+====================== */
+
+header, .home-container,
+.users, .login-card {
+  display: flex;
+}
+
+header, .users {
+  justify-content: space-between;
+}
+
+header, .login-card {
+  align-items: center;
+}
+
+header {
+  margin: 1em auto;
+  width: 90%;
+}
+
+.home-container, .login-card {
+  flex-direction: column;
+}
+
+.home-container {
+  background-image: url(assets/background.svg);
+  background-size: cover;
+  height: 90vh;
+  background-position: center;
+}
+
+.content {
+  margin: auto;
+  width: 90%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.login-link  {
+ border: 1px solid white;
+}
+
+.content button, .login-link,
+.users button, .login-card button {
+  padding: .8em 1.2em;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.login-card button {
+  border: 1px solid var(--yellow);
+}
+
+.login-link  {
+  border: 1px solid white;
+  padding: .5em 2em;
+}
+
+.login-page {
+  background-color: var(--yellow);
+  height: 100vh;
+  padding: 1em;
+}
+
+.users, .login-card img  {
+  width: 50%;
+}
+
+.users, .login-card {
+  padding: 0;
+  margin: 2em auto;
+}
+
+.login-card {
+  background-color: white;
+  width: 30%;
+  padding: 1em 0;
+}
+
+.users button {
+  width: 31%;
+}
+
+.users input {
+  width: 80%;
+  margin-bottom: 1em;
+}

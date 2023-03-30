@@ -8,6 +8,7 @@
   --black: #0C090A;
   --yellow: #EDC71B;
   --white: #FFFFFF;
+  --grey: #EDEDF1;
 }
 
 body {
@@ -40,16 +41,25 @@ h1 {
 ====================== */
 
 header, .home-container,
-.users, .login-card {
+.users, .login-card, .layout,
+.nav-links, .overviewCards,
+.card, .calendarCards {
   display: flex;
 }
 
-header, .users {
+header, .users,
+.overviewCards, 
+.calendarCards {
   justify-content: space-between;
 }
 
-header, .login-card {
+header, .login-card,
+.card {
   align-items: center;
+}
+
+.nav-links a{
+  margin: 1em 0;
 }
 
 header {
@@ -57,7 +67,8 @@ header {
   width: 90%;
 }
 
-.home-container, .login-card {
+.home-container, .login-card,
+.nav-links, .card {
   flex-direction: column;
 }
 
@@ -125,7 +136,44 @@ button {
   width: 31%;
 }
 
+.nav-box {
+  background: var(--yellow);
+  width: 20%;
+  height: 100vh;
+}
+
+.dashBoard, .nav-box {
+  padding: .5em;
+}
+
+.card {
+  width: 22%;
+  background-color: var(--white);
+  justify-content: center;
+  padding: .5em;
+  height: 150px;
+}
+
 .users input {
   width: 80%;
   margin-bottom: 1em;
+}
+
+.calendar {
+  width: 30%;
+}
+
+.employeeTab {
+  width: 50%;
+}
+
+.dashBoard {
+  background-color: var(--grey);
+  width: 80%;
+  padding: 1em;
+  height: 100vh;
+}
+
+.calendarCards {
+  margin-top: 1.5em;
 }

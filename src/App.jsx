@@ -1,12 +1,14 @@
-import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
-import Dashboard from './Pages/Dashboard/Dashboard'
-import Login from './Pages/Login'
+import Dashboard from './pages/Dashboard/Dashboard'
+import Login from './pages/Login'
 import Layout from './components/Layout'
-import AssignWallet from './Pages/Dashboard/AssignWallet'
-import Staff from './Pages/Dashboard/Staff'
+import AssignWallet from './pages/Dashboard/AssignWallet'
+import Staff from './pages/Dashboard/Staff'
 import MainLayout from './components/MainLayout'
+import Employee from './pages/Employee'
+import Vendor from './pages/Vendor'
+import './App.css'
 
 function App() {
 
@@ -15,7 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path='login' element={<Login />} />
+        <Route path='login' element={<Login />}/>
+        <Route path='employee' element={<Employee />}/>
+        <Route path='vendor' element={<Vendor />}/>
         <Route path='dashboard' element={<Layout />}>
         <Route index element={<Dashboard />}/>
         <Route path='staff' element={<Staff />}/>

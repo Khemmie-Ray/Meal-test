@@ -3,13 +3,13 @@ import icon from "../assets/Logo.svg"
 
 const Layout = () => {
   return (
-    <div className="flex">
-        <div className="w-60 h-screen bg-yellow-500">
+    <div className="layout">
+        <div className="nav-box">
             <img src={icon} alt="" />
-        <div className="bg-red-400">
-           <NavLink to="." className="block">Dashboard</NavLink>
-           <NavLink to="staff" className="block">Staff Registration</NavLink>
-           <NavLink to="assignWallet" className="block">Assign Wallet ID</NavLink>
+        <div className="nav-links">
+           <NavLink to=".">Dashboard</NavLink>
+           <NavLink to="staff">Staff Registration</NavLink>
+           <NavLink to="assignWallet">Assign Wallet ID</NavLink>
         </div>
         </div>
         <Outlet />

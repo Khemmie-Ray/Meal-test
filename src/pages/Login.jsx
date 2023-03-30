@@ -7,27 +7,27 @@ const Login = () => {
   const [admin, setAdmin] = useState(false);
   const [employee, setEmployee] = useState(false);
   const [vendor, setVendor] = useState(false);
-  const [accountAddress, setAccountAddress] = useState('')
+  // const [accountAddress, setAccountAddress] = useState('')
 
-  // const provider = ((window.ethereum != null) ? new ethers.providers.Web3Provider(window.ethereum) : ethers.providers.getDefaultProvider());
+  // const provider = new ethers.providers.Web3Provider(window.ethereum)
 
-  //   const { ethereum } = window
+    // const { ethereum } = window
 
-  //   const handleWalletConnect = () => {
-  //       if(ethereum) {
-  //           provider.send("eth_requestAccounts", [])
-  //           .then(async () => {
-  //               await handleAccountChange(provider.getSigner());
-  //           })
-  //       } else {
-  //           alert("You do not have a Metamask wallet. Install one to proceed")
-  //       }
+    // const handleWalletConnect = () => {
+    //     if(ethereum) {
+    //         provider.send("eth_requestAccounts", [])
+    //         .then(async () => {
+    //             await handleAccountChange(provider.getSigner());
+    //         })
+    //     } else {
+    //         alert("You do not have a Metamask wallet. Install one to proceed")
+    //     }
 
-  //       const handleAccountChange = async(newAccount) => {
-  //           const address = await newAccount.getAddress()
-  //           setAccountAddress(address)
-  //       }
-  //   }
+    //     const handleAccountChange = async(newAccount) => {
+    //         const address = await newAccount.getAddress()
+    //         setAccountAddress(address)
+    //     }
+    // }
 
   function handleAdminClick() {
     setAdmin(true)
@@ -44,8 +44,8 @@ const Login = () => {
 
   function handleVendorClick() {
     setAdmin(false)
-    setEmployee(true)
-    setVendor(false)  
+    setEmployee(false)
+    setVendor(true)  
   }
 
     return (
@@ -59,7 +59,7 @@ const Login = () => {
         <div className="formOptions">
         {admin && (<div className="login-card">
           <img src={metaMaskIcon} alt="" />
-          <button onClick={handleWalletConnect}>Connect Wallet</button>
+          <button>Connect Wallet</button>
         </div>)}
         {employee && (<div className="login-card">
           <p>Welcome  back</p>

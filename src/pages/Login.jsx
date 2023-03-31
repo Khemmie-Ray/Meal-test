@@ -1,14 +1,15 @@
 import Header from "../components/Header"
 import metaMaskIcon from "../assets/Metamask.svg"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 // import { ethers } from 'ethers'
 
 const Login = () => {
   const [admin, setAdmin] = useState(false);
   const [employee, setEmployee] = useState(false);
   const [vendor, setVendor] = useState(false);
-  const [walletLogin, setWalletLogin] = useState()
+  const [employeeId, setEmployeeId] = useState()
+  const navigate = useNavigate();
   // const [accountAddress, setAccountAddress] = useState('')
 
   // const provider = new ethers.providers.Web3Provider(window.ethereum)
@@ -50,15 +51,12 @@ const Login = () => {
     setVendor(true)  
   }
 
-  function handleHashPass() {
-    console.log(walletLogin)
-    const hash = walletLogin;
-    localStorage.setItem("walletId", JSON.stringify(hash));                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-    
+  function handleHashPass() {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    navigate(`/login/employee/${employeeId}`)
   }
 
   function handleChangeHash(e) {
-    setWalletLogin(e.target.value)
+    setEmployeeId(e.target.value)
   }
 
     return (
@@ -76,7 +74,7 @@ const Login = () => {
         </div>)}
         {employee && (<div className="login-card">
           <p>Welcome  back</p>
-          <input type="text" placeholder="Paste in your Hash" onChange={handleChangeHash} value={walletLogin}/>
+          <input type="text" placeholder="Enter the Employee Id" onChange={handleChangeHash} value={employeeId}/>
           <button className="login-Btn" onClick={handleHashPass}>Submit</button>
         </div>)}
         {vendor && (<div className="login-card"> 

@@ -133,6 +133,10 @@ button {
   margin: 1em 0;
 }
 
+.login-card input {
+  margin-bottom: 16px;
+}
+
 .login-link  {
   border: 1px solid white;
   padding: .5em 2em;

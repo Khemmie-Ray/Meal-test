@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const Staff = () => {
     const [staffData, setStaffData] = useState([])
     const [openModal, setOpenModal] = useState(false)
-    const [text, setText] = useState({firstname: '', lastname: '', role: '', wallet_address: ''})
+    const [text, setText] = useState({firstname: '', lastname: '', role: '', employeeid: ''})
 
     useEffect(() => {
         fetch('https://plate-tracker.herokuapp.com/fetch/staff/all')
@@ -35,11 +35,11 @@ const Staff = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const {firstname, lastname, role, wallet_address} = text
+        const {firstname, lastname, role, employeeid} = text
         const data = {
             firstName: firstname,
             lastName: lastname,
-            employeeId: wallet_address,
+            employeeId: employeeid,
             role: role
         }
         fetch('https://plate-tracker.herokuapp.com/staff/register/', {
@@ -82,7 +82,7 @@ const Staff = () => {
                 <input type="text" id="firstname" placeholder="First Name" onChange={handleChange} value={text.firstname}/>
                 <input type="text" id="lastname" placeholder="Last Name" className="block mb-2" value={text.lastname} onChange={handleChange}/>
                 <input type="text" id="role" placeholder="Role"  value={text.role} onChange={handleChange}/>
-                <input type="text" id="wallet_address" placeholder="Wallet Address"  value={text.wallet_address} onChange={handleChange}/>
+                <input type="text" id="employeeid" placeholder="Employee id"  value={text.employeeid} onChange={handleChange}/>
                 <button>Submit</button>
             </form>
         </div>)}

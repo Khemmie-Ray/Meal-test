@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <div className="layout">
         <div className="nav-box">
-            <img src={icon} alt="" />
+            <NavLink to=".."><img src={icon} alt="" /></NavLink>
         <div className="nav-links">
            <NavLink to=".">Dashboard</NavLink>
            <NavLink to="staff">Staff Registration</NavLink>

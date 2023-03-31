@@ -18,12 +18,12 @@ function App() {
         <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path='login' element={<Login />}/>
-        <Route path='employee' element={<Employee />}/>
-        <Route path='vendor' element={<Vendor />}/>
-        <Route path='dashboard' element={<Layout />}>
+        <Route path='login/employee' element={<Employee />}/>
+        <Route path='login/vendor' element={<Vendor />}/>
+        <Route path='login/dashboard' element={<Layout />}>
         <Route index element={<Dashboard />}/>
         <Route path='staff' element={<Staff />}/>
-        <Route path='assignWallet' element={<AssignWallet />}/>
+        <Route path='assignWallet' element={<AssignWallet />}/>Route
         </Route>
         </Route>
       </Routes>

@@ -36,6 +36,12 @@ h1 {
   width: 20%;
 }
 
+.card h3 {
+  margin-bottom: 0;
+  font-weight: 500;
+  text-align: center;
+}
+
 /* ======================
       Layout
 ====================== */
@@ -43,7 +49,7 @@ h1 {
 header, .home-container,
 .users, .login-card, .layout,
 .nav-links, .overviewCards,
-.card, .calendarCards {
+.card, .calendarCards, .staff {
   display: flex;
 }
 
@@ -59,7 +65,7 @@ header, .login-card,
 }
 
 .nav-links a{
-  margin: 1em 0;
+  margin: .5em 0;
 }
 
 header {
@@ -68,7 +74,7 @@ header {
 }
 
 .home-container, .login-card,
-.nav-links, .card {
+.nav-links, .card, .staff {
   flex-direction: column;
 }
 
@@ -76,6 +82,7 @@ header {
   background-image: url(assets/background.svg);
   background-size: cover;
   height: 90vh;
+  padding: 1em;
   background-position: center;
 }
 
@@ -93,7 +100,8 @@ button {
 }
 
 .content button, .login-link,
-.users button, .login-card button {
+.users button, .login-card a,
+.mealPass button, .addNew {
   padding: .8em 1.2em;
   border-bottom-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -102,8 +110,27 @@ button {
   font-weight: 500;
 }
 
-.login-card button {
+.login-card input {
+  padding: .6em 1em;
   border: 1px solid var(--yellow);
+}
+
+.mealPass button, .addNew {
+  background-color: var(--yellow);
+}
+
+.addNew {
+  margin-top: 2em;
+}
+
+.mealPass {
+  margin: 1em auto;
+  font-size: .8rem;
+}
+
+.login-card a {
+  border: 1px solid var(--yellow);
+  margin: 1em 0;
 }
 
 .login-link  {
@@ -140,9 +167,10 @@ button {
   background: var(--yellow);
   width: 20%;
   height: 100vh;
+  padding: 1em;
 }
 
-.dashBoard, .nav-box {
+.dashBoard {
   padding: .5em;
 }
 
@@ -161,10 +189,7 @@ button {
 
 .calendar {
   width: 30%;
-}
-
-.employeeTab {
-  width: 50%;
+  background-color: var(--white);
 }
 
 .dashBoard {
@@ -174,6 +199,91 @@ button {
   height: 100vh;
 }
 
+#employee {
+  padding: 1.5em;
+}
+
+.react-calendar {
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: .5em;
+}
+
+.overviewCards, 
 .calendarCards {
-  margin-top: 1.5em;
+  width: 90%;
+  margin: 2em auto;
+}
+
+.staffInfo th, .staffInfo td {
+  border: 1px solid var(--white);
+  padding: .5em;
+  font-size: .9rem;
+}
+
+.staffInfo th {
+  background-color: grey;
+}
+
+.staffInfo td {
+  background-color: white;
+}
+
+.modal-card {
+  position: absolute;
+  background-color: white;
+}
+
+.modal-card input {
+  display: block;
+  margin-bottom: .5em;
+  top: 20%;
+}
+
+.staffInfo {
+  width: 80%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+/* ======================
+      Media Query
+====================== */
+
+@media (max-width: 600px) {
+  .home-container, .users,
+  .login-card, .dashBoard,
+  .nav-box, .card, .calendar {
+    width: 100%;
+  }
+
+  .dashBoard h2 {
+    text-align: center;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .card {
+    margin-bottom: 1em;
+  }
+
+  .nav-box, .dashBoard {
+    height: auto;
+  }
+
+  .overviewCards, .layout {
+    flex-direction: column;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+
+  .content p {
+    width: 80%;
+  }
+
 }
